@@ -75,7 +75,7 @@ if uploaded_files:
 
 
     # Display the Match Scores DataFrame
-    st.write("#### Hover over the table below and, in the top-right, click 'Download as CSV':")
+    st.write("##### Hover over the table below and, in the top-right, click 'Download as CSV':")
     # st.dataframe(result_df)
 
     # Drop the unnecessary columns (those that are all NaN)
