@@ -17,8 +17,8 @@ if uploaded_files:
         euro_data = pd.read_excel(uploaded_file, sheet_name=SHEET_NAME)
 
         # Display the Input Excel as DataFrame
-        st.write(f"DataFrame from the uploaded file: {uploaded_file.name}")
-        st.dataframe(euro_data)
+        # st.write(f"DataFrame from the uploaded file: {uploaded_file.name}")
+        # st.dataframe(euro_data)
 
         match_row_indices = list(range(5, 21)) + list(range(23, 39)) + list(range(41, 49)) + list(range(51, 55)) + [57]
         match_col_indices = [3, 6]
@@ -75,15 +75,15 @@ if uploaded_files:
 
 
     # Display the Match Scores DataFrame
-    st.write("CSV file containing scores of individual matches:")
-    st.dataframe(result_df)
+    st.write("Hover over the table below and, in the top-right, click 'Download as CSV':")
+    # st.dataframe(result_df)
 
     # Drop the unnecessary columns (those that are all NaN)
     result_df = result_df.dropna(axis=1, how='all')
-    st.write(result_df)
+    st.dataframe(result_df)
 
     # Doesn't work in the deployed app:
-    st.button(
-        "Save to Excel",
-        on_click=lambda: result_df.to_excel("combined_sheet.xlsx", index=False)
-    )
+    # st.button(
+    #     "Save to Excel",
+    #     on_click=lambda: result_df.to_excel("combined_sheet.xlsx", index=False)
+    # )
